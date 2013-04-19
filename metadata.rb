@@ -1,4 +1,4 @@
-ame              "dnsmasq-pxe"
+name             "dnsmasq-pxe"
 maintainer       "Mike Adolphs"
 maintainer_email "mike@fooforge.com"
 license          "Apache 2.0"
