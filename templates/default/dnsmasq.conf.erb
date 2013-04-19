@@ -1,0 +1,4 @@
+port=0
+dhcp-no-override
+dhcp-range=<%= @network_range %>,proxy
+pxe-service=x86PC, "Install Linux", pxelinux, <%= @tftp_server_ip %>
