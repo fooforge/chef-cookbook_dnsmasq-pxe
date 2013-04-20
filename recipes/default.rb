@@ -5,7 +5,7 @@ service 'dnsmasq' do
 end
 
 template '/etc/dnsmasq.conf' do
-  source 'dnsmasq.conf'
+  source 'dnsmasq.conf.erb'
   owner 'root'
   group 'root'
   mode 0644
