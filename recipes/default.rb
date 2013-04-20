@@ -2,7 +2,7 @@ file '/etc/resolvconf/update.d/dnsmasq' do
   action :delete
 end
 
-cookbook_file "/etc/defaults/dnsmasq.conf" do
+cookbook_file "/etc/default/dnsmasq.conf" do
   source "defaults"
   owner 'root'
   group 'root'
