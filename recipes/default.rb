@@ -4,6 +4,26 @@ service 'dnsmasq' do
   action :start
 end
 
+file '/etc/resolvconf/update.d/dnsmasq' do
+  action :delete
+end
+
+cookbook_file "/etc/defaults/dnsmasq.conf" do
+  source "defaults"
+  owner 'root'
+  group 'root'
+  mode  0644
+
+end
+
+cookbook_file "/etc/init.d/dnsmasq" do
+  source "init_script.sh"
+  owner 'root'
+  group 'root'
+  mode  0644
+
+end
+
 template '/etc/dnsmasq.conf' do
   source 'dnsmasq.conf.erb'
   owner 'root'
