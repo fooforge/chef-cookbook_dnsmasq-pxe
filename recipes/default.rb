@@ -1,9 +1,3 @@
-service 'dnsmasq' do
-  supports :status => true, :restart => true, :reload => false, :enable => true, :disable => true
-
-  action :start
-end
-
 file '/etc/resolvconf/update.d/dnsmasq' do
   action :delete
 end
@@ -22,6 +16,12 @@ cookbook_file "/etc/init.d/dnsmasq" do
   group 'root'
   mode  0644
 
+end
+
+service 'dnsmasq' do
+  supports :status => true, :restart => true, :reload => false, :enable => true, :disable => true
+
+  action :start
 end
 
 template '/etc/dnsmasq.conf' do
