@@ -14,7 +14,7 @@ cookbook_file "/etc/init.d/dnsmasq" do
   source "init_script.sh"
   owner 'root'
   group 'root'
-  mode  0644
+  mode  0755
 
 end
 
