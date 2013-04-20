@@ -1,4 +1,4 @@
-service 'dnsmask' do
+service 'dnsmasq' do
   supports :status => true, :restart => true, :reload => false, :enable => true, :disable => true
 
   action :start
@@ -10,6 +10,6 @@ template '/etc/dnsmasq.conf' do
   group 'root'
   mode 0644
 
-  variables node.dnsmask_pxe
-  notifies :restart, 'service[dnsmask]', :delayed
+  variables node.dnsmasq_pxe
+  notifies :restart, 'service[dnsmasq]', :delayed
 end
